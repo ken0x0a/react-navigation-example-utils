@@ -15,15 +15,16 @@ export interface CreateNavScreenArgs extends NavScreenBaseProps, NavigationStack
   title: string
 }
 
+interface NavScreenProps extends NavigationScreenProps<{}> {
+  sections: SectionListProps<RouteItem>['sections']
+}
+
 export function createNavScreen({
   title = 'Navigation List',
   sections,
   linkProps,
   ...navigationStackOptions
 }: CreateNavScreenArgs) {
-  interface NavScreenProps extends NavigationScreenProps<{}> {
-    sections: SectionListProps<RouteItem>['sections']
-  }
 
   const NavScreen: React.FC<NavScreenProps> = (props) => {
     return (
