@@ -24,8 +24,7 @@ export function createNavScreen({
   sections,
   linkProps,
   ...navigationStackOptions
-}: CreateNavScreenArgs) {
-
+}: CreateNavScreenArgs): React.FC<NavScreenProps> {
   const NavScreen: React.FC<NavScreenProps> = (props) => {
     return (
       <SectionList
@@ -47,15 +46,13 @@ export function createNavScreen({
     ...navigationStackOptions,
     title,
   }
-  ;(NavScreen as any).navigationOptions = navigationOptions
+  ;(NavScreen as any).navigationOptions = navigationOptions // eslint-disable-line @typescript-eslint/no-explicit-any
 
   return NavScreen
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  // eslint-disable-next-line react-native/no-color-literals
   sectionHeader: {
     paddingHorizontal: 14,
     paddingVertical: 8,

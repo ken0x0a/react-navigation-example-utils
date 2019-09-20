@@ -1,12 +1,13 @@
 import React from 'react'
 import {
   createStackNavigator,
+  NavigationContainer,
   NavigationScreenConfigProps,
   NavigationStackScreenOptions,
   NavigationTabScreenOptions,
   StackNavigatorConfig,
 } from 'react-navigation'
-import { TabBarIcon } from './components/TabBarIcon';
+import { TabBarIcon } from './components/TabBarIcon'
 import { createNavScreen } from './create-nav-screen'
 import { routeToSection } from './route-to-sections'
 import { RouteMap, RouteSectionMap } from './types'
@@ -51,7 +52,7 @@ export function createExampleStack({
   // initialRouteName,
   navScreenRouteKey,
   navScreenTitle,
-}: CreateExampleStackArgs) {
+}: CreateExampleStackArgs): NavigationContainer {
   const sections = routeToSection(routeSectionMap)
   const NavScreen = createNavScreen({ title: navScreenTitle, sections })
   const routeMap = Object.values(routeSectionMap).reduce<RouteMap>(
@@ -83,7 +84,7 @@ export function createExampleStack({
     props: NavigationScreenConfigProps,
   ): NavigationTabScreenOptions => ({
     tabBarLabel,
-    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={tabBarIconName} />,
+    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={tabBarIconName} />, // eslint-disable-line react/display-name
     ...(typeof tabScreenOptions === 'function' ? tabScreenOptions(props) : tabScreenOptions),
   })
 
