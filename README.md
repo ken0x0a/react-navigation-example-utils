@@ -3,18 +3,73 @@
 
 ---
 
+- [Install](#install)
 - [Usage](#usage)
+  - [`createExampleStack`](#createexamplestack)
+  - [`routeToSection`](#routetosection)
+  - [`createNavScreen`](#createnavscreen)
 - [Components](#components)
 - [Status](#status)
 - [Why I created this library](#why-i-created-this-library)
 
 ---
 
-## Usage
+## Install
 
 ```sh
 yarn add react-navigation-example-utils
 ```
+
+## Usage
+
+### `createExampleStack`
+
+```jsx
+import { createExampleStack } from 'react-navigation-example-utils'
+
+const HomeStack = createExampleStack({
+  routeSectionMap: homeTabRouteSectionMap,
+  navScreenTitle: 'Examples',
+  navScreenRouteKey: 'HomeNavScreen',
+  tabBarLabel: 'Home',
+  tabBarIconName: Platform.OS === 'ios' ? 'ios-videocam' : 'md-videocam',
+  tabScreenOptions: {
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        name={
+          Platform.OS === 'ios'
+            ? `ios-information-circle${focused ? '' : '-outline'}`
+            : 'md-information-circle'
+        }
+      />
+    ),
+  },
+})
+
+const AppNavigator = createAppContainer(HomeStack)
+
+// # if you need BottomTabNavigator
+// const MainTabNavigator = createBottomTabNavigator(
+//   { HomeStack },
+//   { initialRouteName: 'HomeStack' },
+// )
+
+// # if you need SwitchNavigator
+// const AppNavigator = createAppContainer(
+//   createSwitchNavigator({
+//     Main: MainTabNavigator,
+//   }),
+// )
+```
+
+### `routeToSection`
+
+Used inside [`createExampleStack`](#createexamplestack)
+
+### `createNavScreen`
+
+Used inside [`createExampleStack`](#createexamplestack)
 
 
 ## Components
