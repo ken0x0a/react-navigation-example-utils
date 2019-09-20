@@ -23,7 +23,7 @@
     "type-check": "tsc --noEmit",
     "type-check-ci": "tsc --incremental --outDir './build'",
     "test": "yarn run type-check && yarn run lint",
-    "prepare": "test -n \"NO_YARN_POSTINSTALL\" || bob build",
+    "prepare": "test -n \"$NO_YARN_POSTINSTALL\" || bob build",
     "tsw": "tsc --noEmit --watch",
     "semantic-release": "semantic-release"
   },
