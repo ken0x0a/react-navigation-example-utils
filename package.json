@@ -45,7 +45,7 @@
     "react-navigation": "3.12.1",
     "react-native-reanimated": "^1.0.1",
     "semantic-release": "15.13.24",
-    "typescript": "3.5.3"
+    "typescript": "3.6.3"
   },
   "@react-native-community/bob": {
     "source": "src",
