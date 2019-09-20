@@ -1,3 +1,3 @@
 {
-  "extends": "@ken0x0a/tsconfig/bob"
+  "extends": "@ken0x0a/tsconfig/bob.json"
 }
