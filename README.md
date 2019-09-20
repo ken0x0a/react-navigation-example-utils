@@ -27,6 +27,16 @@ yarn add react-navigation-example-utils
 ```jsx
 import { createExampleStack } from 'react-navigation-example-utils'
 
+const Examples = {
+  Example1Screen, // React Component
+  Example2Screen,
+  Example3Screen,
+}
+
+const homeTabRouteSectionMap = {
+  Examples,
+}
+
 const HomeStack = createExampleStack({
   routeSectionMap: homeTabRouteSectionMap,
   navScreenTitle: 'Examples',
