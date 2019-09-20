@@ -2,6 +2,7 @@ import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 import { NavigationScreenProps } from 'react-navigation'
+import { colors } from '../designs/colors'
 
 export interface LinkTouchableProps {
   activeOpacity?: number
@@ -45,7 +46,7 @@ export const LinkListItem: React.FC<LinkProps> = ({ to, navigation, touchablePro
 const styles = StyleSheet.create({
   borderBottom: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#D4D4D4',
+    borderBottomColor: colors.list.separatorBorderColor,
   },
   link: { height: 44, paddingHorizontal: 14, justifyContent: 'center' },
   linkText: { letterSpacing: 0.2 },

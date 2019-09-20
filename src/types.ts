@@ -4,7 +4,7 @@ export interface RouteItem {
 }
 
 export interface RouteMap {
-  [key: string]: React.ComponentType<any>
+  [key: string]: React.ComponentType
 }
 
 export interface RouteSectionMap {
